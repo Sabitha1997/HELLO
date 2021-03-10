@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	body{
+			background: repeating-linear-gradient(green, pink 10%, white 20%);
+}</style>
+</head>
+<body>
+<script type="text/javascript">
+		function text1(s)
+		{
+			if(s==1)
+			{
+				document.getElementById('demo').innerHTML="Smile always";
+			}
+			else
+			{
+				document.getElementById('demo').innerHTML="Control your feelings!!!!";
+			}
+		}
+	</script>
+
+	<p id= "demo"></p>
+	<button type="button" onclick="text1(1)">Happy</button>
+	<button type="button" onclick="text1(0)">Sad</button>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #cdedc2;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 20%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #ebf7e6;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body style="background: #e1f5da">
+	<center><h2>ABOUT MEDICITY</h2></center>
+	<p>Travancore Medical College is a unit of Quilon Medical Trust, Kollam, Kerala. Quilon Medical Trust started Travancore medical college to promote medical education and health care with a special consideration to the minorities and socially backward communities. The treatment is carried out by keeping the base as “Service with Love”.</p>
+	<p>Quilon Medical Trust begun the multi-specialty hospital with 800 bed facility  in 2009. Travancore Medical College Hospital was started with the target to be the source of ideal destination in every health needs, with a higher quality and at an affordable cost. And was able to get a complete satisfaction of its customers, investors, employees and regulatory authorities.</p>
+	<header>
+  <h2>Departments</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Cardiology">Cardiology</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Neurology">Neurology</li>
+      <li><a href="https://en.wikipedia.org/wiki/Pediatrics">Pediatrician</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>CARDIOLOGY</h1>
+    <p>Cardiology is a medical specialty and a branch of internal medicine concerned with disorders of the heart. It deals with the diagnosis and treatment of such conditions as congenital heart defects, coronary artery disease, electrophysiology, heart failure and valvular heart disease. Subspecialties of the cardiology field include cardiac electrophysiology, echocardiography, interventional cardiology and nuclear cardiology.</p>
+       <h1>NEUROLOGY</h1>
+    <p>Neurology is the branch of medicine concerned with the study and treatment of disorders of the nervous system. The nervous system is a complex, sophisticated system that regulates and coordinates body activities. It has two major divisions: Central nervous system: the brain and spinal cord.</p>
+      </article>
+</section>
+
+<footer>
+  <p>Special Treatments</p>
+</footer>
+
+
+</body>
+</html>

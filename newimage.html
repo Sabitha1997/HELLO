@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style >
+		div{
+			height:300%;
+			background: linear-gradient(to top,#33ccff 60%, #ff99cc 100%); 
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">
+	<h1>NEW IMAGE</h1>
+	<p> Here we can see changes in the image</p>
+	<script >
+		function myflower1(s1) {
+			var pic;
+			if (s1==0)
+			{
+				pic="bud.jpg";
+			}
+			else
+			{
+				pic="flo.jpg";
+			}
+			
+			document.getElementById('flower').src = pic;
+		}
+	</script>
+	<img id="flower" src="bud.jpg" width="100" height="100">
+	
+	<p>
+		<button type="button" onclick="myflower1(1)">Lotus</button>
+		<button type="button" onclick="myflower1(0)">Lily</button>
+	</p>
+</div>
+<!--<div></div> -->
+</body>
+</html>
