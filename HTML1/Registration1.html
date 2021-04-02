@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1">
+	<title></title>
+	<!--Styling the body-->
+	<style >
+	
+		body {
+    			background: linear-gradient(to right, #78a7ba 0%, #385d6c 50%, #78a7ba 99%);
+			}
+		.column {
+						float: left;
+						width:40%;
+						padding: 15px;
+						height: 20px;
+						margin:15px;
+				}
+		.row:after {
+						  content: "";
+						  display: table;
+						  clear: both;
+					}
+
+		.center 	{
+						/*align-content:center;
+						width: 50px;
+						border: 2px solid #73AD21;
+						padding: 5px;*/
+						margin: auto;
+					 	/* width: 70%;
+					  	border: 3px solid #73AD21;*/
+					  
+				}
+
+		p           {
+						font-size: small;
+						color: red;
+						box-sizing: 2px;
+						visibility: 
+
+
+		}
+
+
+		header {
+						padding:2px;
+						background-color: #eff0f1;
+						border-top-left-radius: 4px;
+						border-top-right-radius: 4px;
+
+				}
+
+		footer{
+						background-color: #eff0f1;
+						padding-top: 4px;
+					 	padding-bottom:80px;
+					 	height: 20px;
+				}
+		
+		
+/* Styling the form */
+
+		.form1{
+						font-family: "Roboto", sans-serif;
+					    width: 800px;
+					    margin: 10px auto;
+					    background: linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+					    border-radius: 20px;
+			  }
+
+		label{
+					  	color: #1bba93;
+					    font-size: 17px;
+					    font-weight: bold;
+			  }
+
+		input[type=text]
+						{
+							
+							width: 200px;
+							height: 30px;
+							border: 1px solid #ccc;
+  							border-radius: 2px;
+						}
+
+		input[type=email]
+						{
+							
+							width: 580px;
+							height: 30px;
+							border:1px solid #ccc;
+							border-radius: 2px;
+
+						}
+
+		input[type=password]
+						{
+							
+							width: 200px;
+							height: 30px;
+							border:1px solid #ccc;
+							border-radius: 2px;
+						}
+
+		select
+						{
+							
+							width: 200px;
+							height: 30px;
+							border:1px solid #ccc;
+							border-radius: 2px;
+						}
+
+		input[type=radio]
+						{
+							
+							width: 20px;
+							height: 15px;
+						}
+
+		input[type=checkbox]
+						{
+							
+							width: 20px;
+							height: 15px;
+						}
+
+		input[type=range]
+						{
+							
+							width: 200px;
+							height: 40px;
+
+						}
+
+		input[type=number]
+						{
+							
+							width: 200px;
+							height: 30px;
+							border:1px solid #ccc;
+							border-radius: 2px;
+						}
+
+		input[type=submit]
+						{
+							
+							width: 80px;
+							height: 30px;
+							color: white;
+							font-weight: bold;
+							letter-spacing: 1px;
+							border-color: transparent;
+						}
+	</style>
+	<!-- validation conditions-->
+	<script type="text/javascript">
+
+		function regvalidation(inputtxt)
+		{ 
+
+		/*Declaring the variables which are all used for validation process*/
+
+			document.getElementById('demo').innerHTML="";
+			var f_name=document.getElementById('f1').value;
+			document.getElementById('demo1').innerHTML="";
+			var l_name=document.getElementById('l1').value;
+			document.getElementById('demo3').innerHTML="";
+			var firstp=document.getElementById('p1').value;
+			document.getElementById('demo4').innerHTML="";
+			var scndp=document.getElementById('p2').value;
+			document.getElementById('demo2').innerHTML="";
+			var e_mail=document.getElementById('e1').value;
+			var atposition=e_mail.indexOf("@");  
+			var dotposition=e_mail.lastIndexOf(".");
+			var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+			document.getElementById('demo5').innerHTML="";
+			var g_gender=document.querySelector('input[name="gender"]:checked');
+			document.getElementById('demo6').innerHTML="";
+			var hob_ies=document.querySelector('input[name="hobbies"]:checked');
+			document.getElementById('demo11').innerHTML="";
+			var b_io=document.getElementById('bioinfo').value;
+			document.getElementById('demo7').innerHTML="";
+			document.getElementById('demo9').innerHTML="";
+			document.getElementById('demo0').innerHTML="";
+			var allowedExtensions =/(\.jpg|\.jpeg|\.png|\.gif)$/i; 
+			var a_ge=document.getElementById('a1').value;
+			var fileInput = document.getElementById('up1'); 
+            var filePath = fileInput.value; 
+		
+
+/*validating conditions of each field*/
+
+			if(f_name=="")
+			{
+				document.getElementById('demo').innerHTML="Please enter your firstname";
+				/*document.getElementById('demo').setCustomValidity("Please enter your firstname");*/
+				return false;
+			}
+			if(l_name=="")
+			{
+				document.getElementById('demo1').innerHTML="Please enter your lastname";
+				return false;
+			}
+			if(e_mail=="")
+			{
+				document.getElementById('demo2').innerHTML="Please enter your Email-Id";
+				return false;
+			}
+
+			 if(atposition<2 || dotposition<atposition+2 || dotposition+2>=e_mail.length)
+			 {
+				document.getElementById('demo2').innerHTML="Please enter your Valid Email-Id";
+				return false;
+			}
+			if(firstp=="")
+			{
+				document.getElementById('demo3').innerHTML="Please enter your password";
+				return false;
+			}
+			if(scndp=="")
+			{
+				document.getElementById('demo4').innerHTML="Please enter your confirm password";
+				return false;
+			}
+			
+			if(!(inputtxt.value.match(passw)))
+			{
+			
+				document.getElementById('demo4').innerHTML="Please enter correct password";
+				return false;
+			}
+			
+			if(g_gender==null)
+			{
+				document.getElementById('demo5').innerHTML="Select your gender";
+				return false;
+			}
+
+			 if(hob_ies==null)
+			{
+				document.getElementById('demo6').innerHTML="Select your hobbies";
+				return false;
+			}
+			if(document.getElementById('s1').value=="")
+			{
+				document.getElementById('demo7').innerHTML="Select your source of income";
+				return false;
+			}
+			if(a_ge=="")
+			{
+
+				document.getElementById('demo0').innerHTML="Enter your age";
+				return false;
+			}
+			 
+			if((isNaN(a_ge)))
+			{
+
+				document.getElementById('demo0').innerHTML="Enter age in number";
+				return false;
+			}
+			 
+			if (document.getElementById("up1").value == "") 
+			{
+				document.getElementById('demo9').innerHTML="Please upload your file";
+				return false;
+			}
+			if (!allowedExtensions.exec(filePath)) 
+			{
+				document.getElementById('demo9').innerHTML="Please upload correctextension ";
+				return false;
+			}
+			 if(b_io=="")
+			{
+				document.getElementById('demo11').innerHTML="Please enter your bio";
+				return false;
+			}
+			 if ((b_io.length < 20) || (b_io.length > 100))
+			{
+				document.getElementById('demo11').innerHTML="Length is too short or too long";
+				return false;
+			}
+			
+			 
+   
+		}
+	</script>
+	
+</head>
+<body>
+	<div class="center">
+
+		<!--design the registration form//-->
+	<form class= "form1" action="login.html" name="myregform" method="post" >
+		
+				<header>
+					<h1 align="center">CREATE ACCOUNT</h1>
+				</header>
+		
+		
+			<div  class="row">
+				<div class="column">
+					
+					<label>First Name*</label><br>
+					<input type="text" name="fname"  id="f1" size="30" >
+					<p id="demo"><span></span></p>
+				</div>
+
+				<div class="column">
+					<label>Last Name*</label><br>
+					<input type="text" name="lname"  id="l1" size="30" >
+					<p id="demo1"></p>
+				</div>
+			</div>
+
+			<div  class="row">
+					<div class="column">
+						<label>Email*</label>
+						<input type="email" name="mail"  id="e1" size="93" >
+						<p id="demo2"></p>
+					</div>
+			</div>
+
+			<div  class="row">
+				<div class="column">
+					<label>Password*</label><br>
+					<input type="password" name="pass"  id="p1" size="30" placeholder="Enter your password"   >
+					<p id="demo3"></p>
+				</div>
+
+				<div class="column">
+					<label>Confirm Password*</label><br>
+					<input type="password" name="cpass" id="p2" size="30" placeholder="Enter your password again" >
+					<p id="demo4"></p>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="column">
+					<label>Gender :</label><br>
+					<input type="radio" name="gender" value="male" id="m1">Male
+					<input type="radio" name="gender" value="female" id="fm1">Female
+					<input type="radio" name="gender" value="others" id="o1">Others
+					<p id="demo5"></p>
+				</div>
+
+				<div class="column">
+					<label>Hobbies :</label><br>
+						<input type="checkbox" value="Web" name="hobbies">Music
+              			<input type="checkbox" value="Andriod"  name="hobbies">Travel
+              			<input type="checkbox" value="Game"  name="hobbies">Movies
+              			<p id="demo6"></p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="column">
+				<label>	Source of Income</label><br>
+	           			 <select  id="s1" >
+	           			 	<option value=""></option>
+		             		 <option value="A">Employed</option>
+		              		 <option value="B">Self-employed</option>
+		              		 <option value="C">Unemployed</option>
+		        		 </select>	
+		        		  <p id="demo7"></p>
+				</div>
+
+				<div class="column"> 
+						<label>Income</label><br>
+			            <input type="range" min="20" max="50" step="5"  value="0" id="experience"  style="padding:0;"><span id="range-label" style="background-color: #1bba93; border-radius:4px; color:white; position: relative; top:-15px;">20K</span>
+
+			            <!-- span tag used here//-->
+
+			            <p id="demo8"></p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="column">
+					<label>Upload a Profile Picture</label><br>
+					<input type="file" id="up1" name="picture" value="choose file">
+					<p id="demo9"></p>
+				</div>
+
+				<div class="column">
+					<label>Age</label><br>
+					<input type="text" name="age"  id="a1"  ><br>
+					<p id="demo0"></p>
+				</div>
+			</div>
+
+			<div  class="row">
+					<div class="column">
+						<label>BIO</label><br>
+						<textarea  id="bioinfo" rows="4" cols="85"></textarea> 
+						<p id="demo11"></p>
+					</div>
+			</div>
+
+			<div  class="row" id="d12">
+				<div class="column">
+					
+				</div>
+
+				<footer>
+					<div class="column" >
+						<br>
+
+						<!-- Button click is given here //-->
+						
+						<input type="submit" name="submit" value="Create"  onclick="return regvalidation(document.myregform.cpass)" style="float: right; background-color:#1bba93 " >
+					</div>
+				</footer>
+			</div>
+
+		
+				
+		
+		
+	</form>
+</div>
+
+</body>
+</html>
