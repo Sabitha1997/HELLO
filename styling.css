@@ -1,1 +1,46 @@
-body{background-color: #f5eae6;}
+body
+	{
+		background-image: url("bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.login-wrap
+	{
+		text-align: "center";
+		
+	}
+	
+	h2
+	{
+		color: white;
+	}
+	h3
+	{
+		color: white;
+	}
+	.label1
+	{
+		color: white;
+	}
+	#si1
+	{
+		width: 80px;
+		height: 30px;
+		border: 1px solid #ccc;
+  		border-radius: 4px;
+	}
+	#si2
+	{
+		width: 17px;
+		height: 30px;
+		border: 1px solid #ccc;
+  		border-radius: 2px;
+	}
+	#m1
+	{
+		color: #d4d8cd;
+		font-size: 20px;
+		font-family: Cambrial;
+	}
+	
